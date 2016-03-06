@@ -39,6 +39,7 @@
 (ac-config-default)
 
 ;; CC
+(c-set-offset 'case-label '+)
 (setq c-basic-offset 4)
 
 ;; Enhanced Ruby Mode
