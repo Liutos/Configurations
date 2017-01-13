@@ -1,0 +1,22 @@
+(load-file "~/.emacs.d/user/melpa.el")
+
+;; 可用主题：https://github.com/owainlewis/emacs-color-themes
+(load-theme 'spolsky t)
+
+(load-file "~/.emacs.d/user/auto-complete.el")
+(load-file "~/.emacs.d/user/cscope.el")
+(load-file "~/.emacs.d/user/dumb-jump.el")
+(load-file "~/.emacs.d/user/helm.el")
+(load-file "~/.emacs.d/user/helm-swoop.el")
+(load-file "~/.emacs.d/user/highlight-symbol.el")
+(load-file "~/.emacs.d/user/idle-highlight.el")
+(load-file "~/.emacs.d/user/markdown.el")
+(load-file "~/.emacs.d/user/paredit.el")
+(load-file "~/.emacs.d/user/projectile.el")
+(load-file "~/.emacs.d/user/slime.el")
+;; 必须在auto-complete和slime之后加载
+(load-file "~/.emacs.d/user/ac-slime.el")
+
+(load-file "~/.emacs.d/user/smex.el")
+(load-file "~/.emacs.d/user/switch-window.el")
+(load-file "~/.emacs.d/user/yasnippet.el")
