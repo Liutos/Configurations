@@ -12,5 +12,6 @@
 (setq common-lisp-hyperspec-root
       "~/app/HyperSpec/")
 (setq slime-lisp-implementations
-      '((sbcl ("/home/liutos/local/sbcl/bin/sbcl" "--core" "/home/liutos/local/sbcl/lib/sbcl/sbcl.core"))))
+      '((sbcl ("/home/liutos/local/sbcl/bin/sbcl" "--core" "/home/liutos/local/sbcl/lib/sbcl/sbcl.core"))
+        (ccl ("/home/liutos/local/ccl/bin/lx86cl64"))))
 (setq slime-contribs '(slime-fancy))
