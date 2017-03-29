@@ -4,7 +4,7 @@
 	    (local-set-key [C-tab] 'other-window)))
 (add-hook 'org-mode-hook
           (lambda ()
-            (setq toggle-truncate-lines nil)))
+            (toggle-truncate-lines -1)))
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (setq org-agenda-files
