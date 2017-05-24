@@ -5,3 +5,5 @@
 (add-hook 'find-file-not-found-hooks 'file-template-find-file-not-found-hook 'append)
 (add-to-list 'file-template-mapping-alist
              '("\\.asd" . "~/.emacs.d/user/template/template.asd"))
+(add-to-list 'file-template-mapping-alist
+             '("\\.org" . "~/.emacs.d/user/template/template.org"))
