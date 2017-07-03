@@ -1,6 +1,7 @@
 (load-file "~/.emacs.d/user/melpa.el")
 
 ;; 可用主题：https://github.com/owainlewis/emacs-color-themes
+;; (load-theme 'mccarthy t)
 (load-theme 'spolsky t)
 
 (load-file "~/.emacs.d/user/auto-complete.el")

@@ -11,8 +11,9 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (require 'org-depend)
 (setq org-agenda-files
-      '("~/src/org/target/HEAD/project.org"
-        "~/src/org/target/HEAD/task.org"))
+      '("~/src/org/target/HEAD/task.org"
+        "~/src/org/target/HEAD/project.org"
+        "~/src/org/target/HEAD/lts.org"))
 (setq org-enforce-todo-dependencies t)
 (setq org-hide-leading-stars t)
 (setq org-log-done t)
