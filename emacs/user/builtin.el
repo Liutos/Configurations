@@ -16,3 +16,6 @@
 (load-file "~/.emacs.d/user/iswitchb.el")
 (load-file "~/.emacs.d/user/js-mode.el")
 (load-file "~/.emacs.d/user/org.el")
+
+(run-at-time "11:00pm" nil (lambda ()
+                             (shell-command "notify-send -i terminal '整理今天的照片'")))
