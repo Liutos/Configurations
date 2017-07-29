@@ -6,4 +6,6 @@
 (add-to-list 'file-template-mapping-alist
              '("\\.asd" . "~/.emacs.d/user/template/template.asd"))
 (add-to-list 'file-template-mapping-alist
+             '("\\.js$" . "~/.emacs.d/user/template/template.js"))
+(add-to-list 'file-template-mapping-alist
              '("\\.org" . "~/.emacs.d/user/template/template.org"))
