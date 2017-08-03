@@ -18,4 +18,4 @@
 (setq org-log-done t)
 (setq org-todo-keywords
       '((sequence "TODO" "DOING" "DONE")))
-(setq org-default-notes-file "~/src/org/target/HEAD/notes.org")
+(setq org-default-notes-file "~/src/org/target/HEAD/inbox.org")
