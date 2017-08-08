@@ -17,6 +17,7 @@
 (load-file "~/.emacs.d/user/paredit.el")
 (load-file "~/.emacs.d/user/projectile.el")
 (load-file "~/.emacs.d/user/protocolbuffer.el")
+(load-file "~/.emacs.d/user/restclient.el")
 (load-file "~/.emacs.d/user/slime.el")
 ;; 必须在auto-complete和slime之后加载
 (load-file "~/.emacs.d/user/ac-slime.el")
