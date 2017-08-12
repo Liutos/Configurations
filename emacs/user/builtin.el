@@ -1,7 +1,7 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq make-backup-files nil)
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)
 ;;; 使用空格代替制表符
 (setq-default indent-tabs-mode nil)
 

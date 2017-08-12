@@ -9,5 +9,5 @@
 (setq ac-auto-show-menu 0.7)
 ;;; 设定颜色
 (set-face-background 'ac-candidate-face "gray")
-(set-face-underline-p 'ac-candidate-face "black")
+(set-face-underline 'ac-candidate-face "black")
 (set-face-background 'ac-selection-face "blue")
