@@ -9,3 +9,5 @@
 (global-set-key [home] 'beginning-of-buffer)
 (global-set-key "\M- " 'set-mark-command)
 (global-set-key [f5] 'revert-buffer)
+
+(global-set-key "\C-cf" 'lt-cd-shefenqi)
