@@ -10,4 +10,4 @@
 (global-set-key "\M- " 'set-mark-command)
 (global-set-key [f5] 'revert-buffer)
 
-(global-set-key "\C-cf" 'lt-cd-shefenqi)
+(global-set-key "\C-c\C-f" 'lt-cd-shefenqi)
