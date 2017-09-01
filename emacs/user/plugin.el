@@ -2,7 +2,7 @@
 
 ;; 可用主题：https://github.com/owainlewis/emacs-color-themes
 ;; (load-theme 'mccarthy t)
-(load-theme 'spolsky t)
+;; (load-theme 'spolsky t)
 
 (load-file "~/.emacs.d/user/auto-complete.el")
 (load-file "~/.emacs.d/user/crontab.el")
@@ -16,6 +16,7 @@
 (load-file "~/.emacs.d/user/idle-highlight.el")
 (load-file "~/.emacs.d/user/markdown.el")
 (load-file "~/.emacs.d/user/paredit.el")
+(load-file "~/.emacs.d/user/powerline.el")
 (load-file "~/.emacs.d/user/projectile.el")
 (load-file "~/.emacs.d/user/protocolbuffer.el")
 (load-file "~/.emacs.d/user/restclient.el")
