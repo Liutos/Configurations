@@ -21,5 +21,5 @@
 (setq org-default-notes-file "~/src/org/target/HEAD/inbox.org")
 ;;; The document of templates is here: http://orgmode.org/manual/Template-expansion.html#Template-expansion
 (setq org-capture-templates
-      '(("t" "学习任务" entry (file+headline "~/src/org/target/HEAD/inbox.org" "Tasks")
+      '(("t" "学习任务" entry (file+headline "~/src/org/target/HEAD/inbox.org" "学习任务")
          "* TODO %? %^G\n  %T")))
