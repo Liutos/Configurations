@@ -20,6 +20,7 @@
 (load-file "~/.emacs.d/user/powerline.el")
 (load-file "~/.emacs.d/user/projectile.el")
 (load-file "~/.emacs.d/user/protocolbuffer.el")
+(load-file "~/.emacs.d/user/racer.el")
 (load-file "~/.emacs.d/user/restclient.el")
 (load-file "~/.emacs.d/user/slime.el")
 ;; 必须在auto-complete和slime之后加载
