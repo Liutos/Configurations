@@ -9,4 +9,5 @@
     (read-kbd-macro paredit-backward-delete-key) nil))
 (add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
 (setq inferior-lisp-program "sbcl")
-(slime-setup '(slime-banner slime-fancy slime-repl-ansi-color))
+;; (slime-setup '(slime-banner slime-fancy slime-repl-ansi-color))
+(slime-setup '(slime-banner slime-fancy))
