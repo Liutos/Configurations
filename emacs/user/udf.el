@@ -11,3 +11,9 @@
   (interactive)
   (let ((default-directory "~/src/shefenqi/node/"))
     (call-interactively 'find-file)))
+
+(defun lt-cd-tmp ()
+  "Find things under /mnt/shared/tmp/ directory."
+  (interactive)
+  (let ((default-directory "/mnt/shared/tmp/"))
+    (call-interactively 'find-file)))

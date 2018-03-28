@@ -11,3 +11,6 @@
 (setq inferior-lisp-program "sbcl")
 ;; (slime-setup '(slime-banner slime-fancy slime-repl-ansi-color))
 (slime-setup '(slime-banner slime-fancy))
+
+(add-to-list 'load-path "~/installer")
+(require 'slime-annot)
