@@ -1,3 +1,7 @@
+(global-set-key "\C-cmc" 'magit-checkout)
+(global-set-key "\C-cmm" 'magit-merge)
+(global-set-key "\C-cmp" 'magit-push)
+(global-set-key "\C-cms" 'magit-status)
 (global-set-key "\C-cn" 'forward-list)
 ;;; 绑定M-0为跳转到与当前左括号匹配的右括号
 (global-set-key "\M-0" 'forward-list)
