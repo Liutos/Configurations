@@ -15,4 +15,5 @@
 (global-set-key [f5] 'revert-buffer)
 
 (global-set-key "\C-c\C-f" 'lt-cd-shefenqi)
+(global-set-key "\C-c\C-o" 'lt-cd-org)
 (global-set-key "\C-c\C-t" 'lt-cd-tmp)

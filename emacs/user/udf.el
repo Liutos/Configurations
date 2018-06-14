@@ -6,6 +6,12 @@
          (date (substring s 0 (- length 1))))
     (projectile-ag date)))
 
+(defun lt-cd-org ()
+  "Find things under ~/src/org/ directory."
+  (interactive)
+  (let ((default-directory "~/src/org/"))
+    (call-interactively 'find-file)))
+
 (defun lt-cd-shefenqi ()
   "Find things under shefenqi/node/ directory."
   (interactive)
