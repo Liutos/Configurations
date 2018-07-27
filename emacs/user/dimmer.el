@@ -1,0 +1,2 @@
+(require 'dimmer)
+(dimmer-mode)

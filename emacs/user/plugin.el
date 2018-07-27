@@ -6,8 +6,11 @@
 (load-theme 'dracula t)
 
 (load-file "~/.emacs.d/user/auto-complete.el")
+(load-file "~/.emacs.d/user/beacon.el")
 (load-file "~/.emacs.d/user/crontab.el")
 ;; (load-file "~/.emacs.d/user/cscope.el")
+(load-file "~/.emacs.d/user/dashboard.el")
+(load-file "~/.emacs.d/user/dimmer.el")
 (load-file "~/.emacs.d/user/dumb-jump.el")
 ;; (load-file "~/.emacs.d/user/file-template.el")
 (load-file "~/.emacs.d/user/flycheck.el")
