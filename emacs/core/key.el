@@ -1,0 +1,8 @@
+(global-set-key "\M-0" 'forward-list)
+(global-set-key "\M-9" 'backward-list)
+(global-set-key [C-tab] 'other-window)
+(global-set-key [end] 'end-of-buffer)
+(global-set-key [home] 'beginning-of-buffer)
+(global-set-key "\M- " 'set-mark-command)
+(global-set-key [f6] 'delete-other-windows)
+(global-set-key [f5] 'revert-buffer)
