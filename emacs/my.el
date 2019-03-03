@@ -4,6 +4,7 @@
 (load-file "~/Documents/Projects/EmacsSettings/core/appearance.el")
 (load-file "~/Documents/Projects/EmacsSettings/core/behavior.el")
 (load-file "~/Documents/Projects/EmacsSettings/core/key.el")
+(load-file "~/Documents/Projects/EmacsSettings/core/modes/c.el")
 (load-file "~/Documents/Projects/EmacsSettings/core/modes/org.el")
 (load-file "~/Documents/Projects/EmacsSettings/core/modes/sdedit.el")
 (load-file "~/Documents/Projects/EmacsSettings/core/udf.el")
