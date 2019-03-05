@@ -13,7 +13,7 @@
               (set (make-local-variable 'compile-command)
                    (let* ((buffer-name (buffer-name))
                           (base-name (car (split-string buffer-name "\\."))))
-                     (format "sdpng %s" base-name))))))
+                     (format "/usr/local/bin/sdedit -t png -o %s.png %s.sd" base-name base-name))))))
 
 (add-to-list 'auto-mode-alist
              '("\\.sd$" . sdedit-mode))
