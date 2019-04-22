@@ -19,7 +19,7 @@
                            ("~/Dropbox/gtd/coding.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/enter.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/learn.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/life.org" :maxlevel . 2)
+                           ("~/Dropbox/gtd/life.org" :maxlevel . 3)
                            ("~/Dropbox/gtd/projects.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/Projects/cuckoo.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/someday.org" :maxlevel . 2)
@@ -52,6 +52,24 @@
 
 (setq org-archive-location "~/Dropbox/gtd/Archives/%s_archive::")
 
+(defun lt-next-todo (tag hour minute)
+  "设置光标所在行为一个TODO条目，并设置其标签为TAG，SCHEDULED的提醒时间为HOUR:MINUTE
+
+如果当前的时间已经晚于HOUR:MINUTE，那么将会设定为明天的目标小时"
+  (interactive)
+  (cl-assert (stringp tag))
+  (cl-assert (integerp hour))
+  (cl-assert (integerp minute))
+  (org-todo "TODO")
+  (org-set-tags-to tag)
+  (org-set-tags nil t)
+  (let ((current-hour (string-to-number (format-time-string "%H")))
+        scheduled)
+    (cond ((> current-hour hour)
+           (setf scheduled (format "+1d %02d:%02d" hour minute)))
+          (t (setf scheduled (format "%02d:%02d" hour minute))))
+    (message "scheduled: %s" scheduled)
+    (org-schedule nil scheduled)))
 ;;; 将设置TODO、设置标签，以及设置开始时间合并为一个函数
 (defun lt-quick-todo (tag time)
   (interactive)
@@ -61,24 +79,15 @@
   (org-schedule nil time))
 (defun lt-commute-todo ()
   "设置所在条目为TODO；设置标签为【@通勤】；设置开始时间为第二天的上午九点"
-  (interactive)
-  (org-todo "TODO")
-  (org-set-tags-to "@通勤")
-  (org-set-tags nil t)
-  (org-schedule nil "+1d 09:00"))
+  (lt-next-todo "@通勤" 9 0))
 (defun lt-lunch-todo ()
-  "设置午餐任务"
-  (interactive)
-  (org-todo "TODO")
-  (org-set-tags-to "@午餐")
-  (org-set-tags nil t)
-  (org-schedule nil "+1d 12:00"))
+  (lt-next-todo "@午餐" 12 0))
 (defun lt-rest-todo ()
-  (lt-quick-todo "@午休" "+1d 13:00"))
+  (lt-next-todo "@午休" 13 0))
 (defun lt-supper-todo ()
-  (lt-quick-todo "@晚餐" "+1d 18:40"))
+  (lt-next-todo "@晚餐" 18 40))
 (defun lt-night-todo ()
-  (lt-quick-todo "@电脑前" "+1d 21:30"))
+  (lt-next-todo "@电脑前" 21 30))
 
 (add-hook 'org-mode-hook
           (lambda ()
