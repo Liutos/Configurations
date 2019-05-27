@@ -38,3 +38,4 @@
 (load-file "~/Documents/Projects/EmacsSettings/packages/swiper.el")
 (load-file "~/Documents/Projects/EmacsSettings/packages/switch-window.el")
 (load-file "~/Documents/Projects/EmacsSettings/packages/wakatime.el")
+(load-file "~/Documents/Projects/EmacsSettings/packages/yasnippet.el")

@@ -10,6 +10,7 @@
                          "~/Dropbox/gtd/life.org"
                          "~/Dropbox/gtd/projects.org"
                          "~/Dropbox/gtd/Projects/cuckoo.org"
+                         "~/Dropbox/gtd/Projects/jjcc.org"
                          "~/Dropbox/gtd/reading.org"
                          "~/Dropbox/gtd/writing.org"))
 (setq org-default-notes-file "~/Dropbox/gtd/inbox.org")
@@ -22,13 +23,14 @@
                            ("~/Dropbox/gtd/life.org" :maxlevel . 3)
                            ("~/Dropbox/gtd/projects.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/Projects/cuckoo.org" :maxlevel . 1)
+                           ("~/Dropbox/gtd/Projects/jjcc.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/someday.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/reading.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/trash.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/writing.org" :maxlevel . 1)))
 (require 'org-habit)
 (setq org-capture-templates
-      '(("i" "Idea" entry (file+headline "~/Dropbox/gtd/whatever.org" "Anything")
+      '(("i" "Idea" entry (file+headline "~/Dropbox/gtd/inbox.org" "Anything")
          "* %?\n这个想法被记录于%T")
         ("t" "Todo" entry (file+headline "~/Dropbox/gtd/inbox.org" "Tasks")
          "* TODO %?\n")))
