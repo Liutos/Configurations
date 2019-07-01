@@ -65,7 +65,7 @@
   (let ((state org-state))
     (when (string= state "DONE")
       (let ((tags (org-get-tags-at)))
-        (when (or (member "动画" tags)
+        (when (or ;; (member "动画" tags)
                   (member "漫画" tags)
                   (member "充电" tags))
           (org-toggle-archive-tag))))))
@@ -75,7 +75,11 @@
 ;;; 在cuckoo中创建光标所在任务的定时提醒
 (defun scheduled-to-time (scheduled)
   "将TODO条目的SCHEDULED属性转换为UNIX时间戳"
-  (let ((lst (date-to-time scheduled)))
+  ;; 为了能够支持形如<2019-06-15 Sat 14:25-14:55>这样的时间戳，会先用正则表达式提取date-to-time能够处理的部分
+  (let* ((date (progn
+                 (string-match "\\([0-9]+-[0-9]+-[0-9]+ [A-Za-z]+ [0-9]+:[0-9]+\\)" scheduled)
+                 (match-string 0 scheduled)))
+         (lst (date-to-time date)))
     (+ (* (car lst) (expt 2 16))
        (cadr lst))))
 
