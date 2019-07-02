@@ -113,7 +113,8 @@
   (interactive)
   (let ((brief)
         (detail)
-        (remind-id))
+        (remind-id)
+        (task-id))
 
     (setq brief (nth 4 (org-heading-components)))
     (setf detail (extract-task-detail))
@@ -125,10 +126,16 @@
     (request
      "http://localhost:7001/task"
      :data (concat "brief=" (url-encode-url brief) "&detail=" (url-encode-url detail) "&remind_id=" (format "%S" remind-id))
+     :parser 'buffer-string
      :type "POST"
      :success (cl-function
                (lambda (&key data &allow-other-keys)
-                 (message "任务创建完毕"))))))
+                 (message "data: %S" data)
+                 (let ((task (json-read-from-string data)))
+                   (setq task-id (cdr (assoc 'id (cdr (car task)))))
+                   (message "任务%S创建完毕" task-id))))
+     :sync t)
+    (org-set-property "ID" (number-to-string task-id))))
 (add-hook 'org-mode-hook
           (lambda ()
             (local-set-key "\C-cr" 'create-task-in-cuckoo)))

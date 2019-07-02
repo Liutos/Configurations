@@ -10,9 +10,8 @@
                          "~/Dropbox/gtd/gtd.org"
                          "~/Dropbox/gtd/husband.org"
                          "~/Dropbox/gtd/interviewer.org"
-                         "~/Dropbox/gtd/learn.org"
-                         "~/Dropbox/gtd/life.org"
                          "~/Dropbox/gtd/memo.org"
+                         "~/Dropbox/gtd/player.org"
                          "~/Dropbox/gtd/private.org"
                          "~/Dropbox/gtd/programmer.org"
                          "~/Dropbox/gtd/progress.org"
@@ -32,9 +31,8 @@
                            ("~/Dropbox/gtd/gtd.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/husband.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/interviewer.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/learn.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/life.org" :maxlevel . 3)
                            ("~/Dropbox/gtd/memo.org" :maxlevel . 1)
+                           ("~/Dropbox/gtd/player.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/private.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/programmer.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/progress.org" :maxlevel . 1)
