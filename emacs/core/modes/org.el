@@ -34,7 +34,7 @@
                            ("~/Dropbox/gtd/memo.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/player.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/private.org" :maxlevel . 2)
-                           ("~/Dropbox/gtd/programmer.org" :maxlevel . 2)
+                           ("~/Dropbox/gtd/programmer.org" :maxlevel . 3)
                            ("~/Dropbox/gtd/progress.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/projects.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/Projects/cuckoo.org" :maxlevel . 1)
@@ -49,7 +49,7 @@
       '(("i" "Idea" entry (file+headline "~/Dropbox/gtd/inbox.org" "Anything")
          "* %?\n这个想法被记录于%T")
         ("t" "Todo" entry (file+headline "~/Dropbox/gtd/inbox.org" "Tasks")
-         "* TODO %?\n")))
+         "* TODO %U%?\n")))
 
 ;;; 自定义的org agenda命令
 ;;; 参考这篇文档：https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
