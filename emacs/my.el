@@ -37,6 +37,6 @@
 (load-file "~/Projects/Configurations/emacs/packages/smex.el")
 (load-file "~/Projects/Configurations/emacs/packages/swiper.el")
 (load-file "~/Projects/Configurations/emacs/packages/switch-window.el")
-(load-theme 'dracula t)
+(load-theme 'spolsky t)
 (load-file "~/Projects/Configurations/emacs/packages/wakatime.el")
 (load-file "~/Projects/Configurations/emacs/packages/yasnippet.el")

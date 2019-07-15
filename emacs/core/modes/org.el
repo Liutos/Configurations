@@ -61,6 +61,8 @@
          ((org-agenda-compact-blocks t)))
         ("d" "查看今天的安排" agenda ""
          ((org-agenda-span 1)))
+        ("f" "查看TODO条目（按创建时间排序）" todo "TODO"
+         ((org-agenda-sorting-strategy '(priority-down time-up))))
         ("w" "查看今天的工作安排" agenda ""
          ((org-agenda-files '("~/Dropbox/gtd/work.org"))
           (org-agenda-span 1)))))

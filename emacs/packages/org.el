@@ -105,6 +105,7 @@
   (let ((tags (org-get-tags-at)))
     (cond ((member "动画" tags)
            (save-excursion
+             (org-show-context)
              (outline-up-heading 1)
              (nth 4 (org-heading-components))))
           (t ""))))
