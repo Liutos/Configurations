@@ -6,7 +6,6 @@
 (setq org-hide-leading-stars t)         ; 只显示最后一颗星号
 (setq org-agenda-files '("~/Dropbox/gtd/doubt.org"
                          "~/Dropbox/gtd/employee.org"
-                         "~/Dropbox/gtd/enter.org"
                          "~/Dropbox/gtd/gtd.org"
                          "~/Dropbox/gtd/husband.org"
                          "~/Dropbox/gtd/interviewer.org"
@@ -15,19 +14,13 @@
                          "~/Dropbox/gtd/private.org"
                          "~/Dropbox/gtd/programmer.org"
                          "~/Dropbox/gtd/progress.org"
-                         "~/Dropbox/gtd/projects.org"
-                         "~/Dropbox/gtd/Projects/cuckoo.org"
-                         "~/Dropbox/gtd/Projects/jjcc.org"
-                         "~/Dropbox/gtd/reading.org"
-                         "~/Dropbox/gtd/son.org"
-                         "~/Dropbox/gtd/writing.org"))
+                         "~/Dropbox/gtd/son.org"))
 (setq org-default-notes-file "~/Dropbox/gtd/inbox.org")
 (add-to-list 'holiday-other-holidays '(holiday-fixed 2 14 "情人节"))
 (add-to-list 'holiday-other-holidays '(holiday-chinese 8 15 "端午节"))
 (setq org-refile-targets '((nil :maxlevel . 4)
                            ("~/Dropbox/gtd/doubt.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/employee.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/enter.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/gtd.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/husband.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/interviewer.org" :maxlevel . 1)
@@ -36,14 +29,8 @@
                            ("~/Dropbox/gtd/private.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/programmer.org" :maxlevel . 3)
                            ("~/Dropbox/gtd/progress.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/projects.org" :maxlevel . 4)
-                           ("~/Dropbox/gtd/Projects/cuckoo.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/Projects/jjcc.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/someday.org" :maxlevel . 2)
-                           ("~/Dropbox/gtd/reading.org" :maxlevel . 4)
-                           ("~/Dropbox/gtd/son.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/trash.org" :maxlevel . 4)
-                           ("~/Dropbox/gtd/writing.org" :maxlevel . 2)))
+                           ("~/Dropbox/gtd/son.org" :maxlevel . 1)))
 (require 'org-habit)
 (setq org-capture-templates
       '(("i" "Idea" entry (file+headline "~/Dropbox/gtd/inbox.org" "Anything")
