@@ -73,70 +73,70 @@
 (add-to-list 'org-after-todo-state-change-hook 'lt-archive-if-manga t)
 
 ;;; 在cuckoo中创建光标所在任务的定时提醒
-(defun scheduled-to-time (scheduled)
-  "将TODO条目的SCHEDULED属性转换为UNIX时间戳"
-  ;; 为了能够支持形如<2019-06-15 Sat 14:25-14:55>这样的时间戳，会先用正则表达式提取date-to-time能够处理的部分
-  (let* ((date (progn
-                 (string-match "\\([0-9]+-[0-9]+-[0-9]+ [A-Za-z]+ [0-9]+:[0-9]+\\)" scheduled)
-                 (match-string 0 scheduled)))
-         (lst (date-to-time date)))
-    (+ (* (car lst) (expt 2 16))
-       (cadr lst))))
+;; (defun scheduled-to-time (scheduled)
+;;   "将TODO条目的SCHEDULED属性转换为UNIX时间戳"
+;;   ;; 为了能够支持形如<2019-06-15 Sat 14:25-14:55>这样的时间戳，会先用正则表达式提取date-to-time能够处理的部分
+;;   (let* ((date (progn
+;;                  (string-match "\\([0-9]+-[0-9]+-[0-9]+ [A-Za-z]+ [0-9]+:[0-9]+\\)" scheduled)
+;;                  (match-string 0 scheduled)))
+;;          (lst (date-to-time date)))
+;;     (+ (* (car lst) (expt 2 16))
+;;        (cadr lst))))
 
-(defun create-remind-in-cuckoo (timestamp)
-  "往cuckoo中创建一个定时提醒并返回这个刚创建的提醒的ID"
-  (let (remind-id)
-    (request
-     "http://localhost:7001/remind"
-     :data (json-encode-alist
-            (list (cons "timestamp" timestamp)))
-     :headers '(("Content-Type" . "application/json"))
-     :parser 'buffer-string
-     :type "POST"
-     :success (cl-function
-               (lambda (&key data &allow-other-keys)
-                 (message "返回内容为：%S" data)
-                 (let ((remind (json-read-from-string data)))
-                   (setq remind-id (cdr (assoc 'id (cdr (car remind))))))))
-     :sync t)
-    remind-id))
+;; (defun create-remind-in-cuckoo (timestamp)
+;;   "往cuckoo中创建一个定时提醒并返回这个刚创建的提醒的ID"
+;;   (let (remind-id)
+;;     (request
+;;      "http://localhost:7001/remind"
+;;      :data (json-encode-alist
+;;             (list (cons "timestamp" timestamp)))
+;;      :headers '(("Content-Type" . "application/json"))
+;;      :parser 'buffer-string
+;;      :type "POST"
+;;      :success (cl-function
+;;                (lambda (&key data &allow-other-keys)
+;;                  (message "返回内容为：%S" data)
+;;                  (let ((remind (json-read-from-string data)))
+;;                    (setq remind-id (cdr (assoc 'id (cdr (car remind))))))))
+;;      :sync t)
+;;     remind-id))
 
-(defun extract-task-detail ()
-  (let ((tags (org-get-tags-at)))
-    (cond ((member "动画" tags)
-           (save-excursion
-             (org-show-context)
-             (outline-up-heading 1)
-             (nth 4 (org-heading-components))))
-          (t ""))))
+;; (defun extract-task-detail ()
+;;   (let ((tags (org-get-tags-at)))
+;;     (cond ((member "动画" tags)
+;;            (save-excursion
+;;              (org-show-context)
+;;              (outline-up-heading 1)
+;;              (nth 4 (org-heading-components))))
+;;           (t ""))))
 
-(defun create-task-in-cuckoo ()
-  (interactive)
-  (let ((brief)
-        (detail)
-        (remind-id)
-        (task-id))
+;; (defun create-task-in-cuckoo ()
+;;   (interactive)
+;;   (let ((brief)
+;;         (detail)
+;;         (remind-id)
+;;         (task-id))
 
-    (setq brief (nth 4 (org-heading-components)))
-    (setf detail (extract-task-detail))
+;;     (setq brief (nth 4 (org-heading-components)))
+;;     (setf detail (extract-task-detail))
 
-    (let* ((scheduled (org-entry-get nil "SCHEDULED"))
-           (timestamp (scheduled-to-time scheduled)))
-      (setq remind-id (create-remind-in-cuckoo timestamp)))
+;;     (let* ((scheduled (org-entry-get nil "SCHEDULED"))
+;;            (timestamp (scheduled-to-time scheduled)))
+;;       (setq remind-id (create-remind-in-cuckoo timestamp)))
     
-    (request
-     "http://localhost:7001/task"
-     :data (concat "brief=" (url-encode-url brief) "&detail=" (url-encode-url detail) "&remind_id=" (format "%S" remind-id))
-     :parser 'buffer-string
-     :type "POST"
-     :success (cl-function
-               (lambda (&key data &allow-other-keys)
-                 (message "data: %S" data)
-                 (let ((task (json-read-from-string data)))
-                   (setq task-id (cdr (assoc 'id (cdr (car task)))))
-                   (message "任务%S创建完毕" task-id))))
-     :sync t)
-    (org-set-property "ID" (number-to-string task-id))))
-(add-hook 'org-mode-hook
-          (lambda ()
-            (local-set-key "\C-cr" 'create-task-in-cuckoo)))
+;;     (request
+;;      "http://localhost:7001/task"
+;;      :data (concat "brief=" (url-encode-url brief) "&detail=" (url-encode-url detail) "&remind_id=" (format "%S" remind-id))
+;;      :parser 'buffer-string
+;;      :type "POST"
+;;      :success (cl-function
+;;                (lambda (&key data &allow-other-keys)
+;;                  (message "data: %S" data)
+;;                  (let ((task (json-read-from-string data)))
+;;                    (setq task-id (cdr (assoc 'id (cdr (car task)))))
+;;                    (message "任务%S创建完毕" task-id))))
+;;      :sync t)
+;;     (org-set-property "ID" (number-to-string task-id))))
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (local-set-key "\C-cr" 'create-task-in-cuckoo)))

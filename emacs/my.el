@@ -26,6 +26,7 @@
 (load-file "~/Projects/Configurations/emacs/packages/magit.el")
 (load-file "~/Projects/Configurations/emacs/packages/markdown.el")
 (load-file "~/Projects/Configurations/emacs/packages/org.el")
+(load-file "~/Projects/cuckoo/contrib/emacs/org-cuckoo.el")
 (load-file "~/Projects/Configurations/emacs/packages/org-edna.el")
 (load-file "~/Projects/Configurations/emacs/packages/paredit.el")
 (load-file "~/Projects/Configurations/emacs/packages/powerline.el")
