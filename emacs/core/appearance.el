@@ -4,3 +4,4 @@
 (show-paren-mode 1)                     ; 高亮匹配的括号
 (tool-bar-mode -1)                      ; 隐藏工具栏
 (global-hl-line-mode 1)                 ; 高亮光标所在的行
+(set-default-font "Source Code Pro")
