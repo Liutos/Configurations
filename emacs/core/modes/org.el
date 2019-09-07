@@ -106,3 +106,10 @@
 (setq org-columns-default-format "%40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM")
 (setq org-todo-keywords
       '((sequence "TODO" "|" "CANCELLED(c@)" "DONE(d!)")))
+
+(defun liutos-org-agenda-goto ()
+  "调用org-agenda-goto之余，还会调用org-show-context展开上级节点"
+  (interactive)
+  (call-interactively 'org-agenda-goto)
+  (org-show-context))
+(define-key org-agenda-mode-map [tab] 'liutos-org-agenda-goto)
