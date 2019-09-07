@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: 快速输入dataIn
+# key: datain
+# --
+dataIn: 'response.body.data.$1'$0
