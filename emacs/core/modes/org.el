@@ -36,7 +36,7 @@
       '(("i" "Idea" entry (file+headline "~/Dropbox/gtd/inbox.org" "Anything")
          "* %?\n这个想法被记录于%T")
         ("t" "Todo" entry (file+headline "~/Dropbox/gtd/inbox.org" "Tasks")
-         "* TODO %U%?\n")))
+         "* TODO %U%?\n  :PROPERTIES:\n  :ID: %(uuidgen-4)\n  :END:")))
 
 ;;; 自定义的org agenda命令
 ;;; 参考这篇文档：https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
