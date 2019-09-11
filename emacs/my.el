@@ -24,6 +24,7 @@
 (load-file "~/Projects/Configurations/emacs/packages/idle-highlight.el")
 (load-file "~/Projects/Configurations/emacs/packages/ido.el")
 (load-file "~/Projects/Configurations/emacs/packages/js-mode.el")
+(load-file "~/Projects/Configurations/emacs/packages/ledger.el")
 (load-file "~/Projects/Configurations/emacs/packages/magit.el")
 (load-file "~/Projects/Configurations/emacs/packages/markdown.el")
 (load-file "~/Projects/Configurations/emacs/packages/org.el")
