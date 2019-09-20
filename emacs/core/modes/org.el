@@ -5,38 +5,31 @@
 
 (setq org-hide-leading-stars t)         ; 只显示最后一颗星号
 (setq org-agenda-files '("~/Dropbox/gtd/doubt.org"
-                         "~/Dropbox/gtd/employee.org"
-                         "~/Dropbox/gtd/gtd.org"
-                         "~/Dropbox/gtd/husband.org"
-                         "~/Dropbox/gtd/interviewer.org"
                          "~/Dropbox/gtd/memo.org"
-                         "~/Dropbox/gtd/player.org"
-                         "~/Dropbox/gtd/private.org"
-                         "~/Dropbox/gtd/programmer.org"
                          "~/Dropbox/gtd/progress.org"
-                         "~/Dropbox/gtd/son.org"))
+                         "~/Dropbox/gtd/roles/developer.org"
+                         "~/Dropbox/gtd/roles/gtd.org"
+                         "~/Dropbox/gtd/roles/husband.org"
+                         "~/Dropbox/gtd/roles/me.org"
+                         "~/Dropbox/gtd/roles/son.org"))
 (setq org-default-notes-file "~/Dropbox/gtd/inbox.org")
 (add-to-list 'holiday-other-holidays '(holiday-fixed 2 14 "情人节"))
 (add-to-list 'holiday-other-holidays '(holiday-chinese 8 15 "端午节"))
 (setq org-refile-targets '((nil :maxlevel . 4)
                            ("~/Dropbox/gtd/doubt.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/employee.org" :maxlevel . 2)
-                           ("~/Dropbox/gtd/gtd.org" :maxlevel . 2)
-                           ("~/Dropbox/gtd/husband.org" :maxlevel . 2)
-                           ("~/Dropbox/gtd/interviewer.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/memo.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/player.org" :maxlevel . 2)
-                           ("~/Dropbox/gtd/private.org" :maxlevel . 3)
-                           ("~/Dropbox/gtd/programmer.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/progress.org" :maxlevel . 1)
-                           ("~/Dropbox/gtd/someday.org" :maxlevel . 2)
-                           ("~/Dropbox/gtd/son.org" :maxlevel . 1)))
+                           ("~/Dropbox/gtd/roles/developer.org" :maxlevel . 4)
+                           ("~/Dropbox/gtd/roles/gtd.org" :maxlevel . 2)
+                           ("~/Dropbox/gtd/roles/husband.org" :maxlevel . 2)
+                           ("~/Dropbox/gtd/roles/me.org" :maxlevel . 4)
+                           ("~/Dropbox/gtd/roles/son.org" :maxlevel . 1)))
 (require 'org-habit)
 (setq org-capture-templates
       '(("i" "Idea" entry (file+headline "~/Dropbox/gtd/inbox.org" "Anything")
          "* %?\n这个想法被记录于%T")
         ("t" "Todo" entry (file+headline "~/Dropbox/gtd/inbox.org" "Tasks")
-         "* TODO %U%?\n  :PROPERTIES:\n  :ID: %(uuidgen-4)\n  :END:")))
+         "* TODO %?\n  :PROPERTIES:\n  :CREATED_AT: %U\n  :ID: %(uuidgen-4)\n  :END:")))
 
 ;;; 自定义的org agenda命令
 ;;; 参考这篇文档：https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
