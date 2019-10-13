@@ -22,14 +22,14 @@
                            ("~/Dropbox/gtd/roles/developer.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/roles/gtd.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/roles/husband.org" :maxlevel . 2)
-                           ("~/Dropbox/gtd/roles/me.org" :maxlevel . 4)
+                           ("~/Dropbox/gtd/roles/me.org" :maxlevel . 6)
                            ("~/Dropbox/gtd/roles/son.org" :maxlevel . 1)))
 (require 'org-habit)
 (setq org-capture-templates
       '(("i" "Idea" entry (file+headline "~/Dropbox/gtd/inbox.org" "Anything")
          "* %?\n这个想法被记录于%T")
         ("t" "Todo" entry (file+headline "~/Dropbox/gtd/inbox.org" "Tasks")
-         "* TODO %?\n  :PROPERTIES:\n  :CREATED_AT: %U\n  :ID: %(uuidgen-4)\n  :END:")))
+         "* TODO %U%?\n  :PROPERTIES:\n  :CREATED_AT: %U\n  :ID: %(uuidgen-4)\n  :END:")))
 
 ;;; 自定义的org agenda命令
 ;;; 参考这篇文档：https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
@@ -61,7 +61,8 @@
   (cl-assert (integerp hour))
   (cl-assert (integerp minute))
   (org-todo "TODO")
-  (org-set-tags-to tag)
+  ;; 2019-10-11 23:17 - 暂时停止设置tag的功能
+  ;; (org-set-tags-to tag)
   (org-set-tags nil t)
   (let ((current-hour (string-to-number (format-time-string "%H")))
         scheduled)
