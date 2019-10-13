@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: JSON数据的头部
+# key: jsonheader
+# --
+Content-Type: application/json
+
+{
+  $1
+}
