@@ -12,3 +12,7 @@
 ;;; https://github.com/deadtrickster/slime-repl-ansi-color
 (load-file "~/Documents/Scripts/slime-repl-ansi-color.el")
 (slime-setup '(slime-fancy slime-repl-ansi-color))
+
+;;; 离线查看HyperSpec
+;;; https://stackoverflow.com/questions/23676164/viewing-the-common-lisp-hyperspec-offline-via-emacs
+(setq common-lisp-hyperspec-root "file:///Users/liutos/Documents/HyperSpec/HyperSpec/")

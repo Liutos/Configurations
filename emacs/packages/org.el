@@ -52,7 +52,7 @@
                    (message "发出%s标签的数据" source))))
               (t (message "当前条目的HIGHLIGHTP属性为%s，不需要推送到RescueTime上" highlightp)))))))
 
-(add-to-list 'org-after-todo-state-change-hook 'lt-done-highlight t)
+;; (add-to-list 'org-after-todo-state-change-hook 'lt-done-highlight t)
 
 (defun lt-todo-send ()
   (interactive)

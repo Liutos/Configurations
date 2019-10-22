@@ -8,9 +8,11 @@
                          "~/Dropbox/gtd/memo.org"
                          "~/Dropbox/gtd/progress.org"
                          "~/Dropbox/gtd/roles/developer.org"
+                         "~/Dropbox/gtd/roles/employee.org"
                          "~/Dropbox/gtd/roles/gtd.org"
                          "~/Dropbox/gtd/roles/husband.org"
                          "~/Dropbox/gtd/roles/me.org"
+                         "~/Dropbox/gtd/roles/player.org"
                          "~/Dropbox/gtd/roles/son.org"))
 (setq org-default-notes-file "~/Dropbox/gtd/inbox.org")
 (add-to-list 'holiday-other-holidays '(holiday-fixed 2 14 "情人节"))
@@ -19,6 +21,7 @@
                            ("~/Dropbox/gtd/doubt.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/memo.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/progress.org" :maxlevel . 1)
+                           ("~/Dropbox/gtd/roles/employee.org" :maxlevel . 1)
                            ("~/Dropbox/gtd/roles/developer.org" :maxlevel . 4)
                            ("~/Dropbox/gtd/roles/gtd.org" :maxlevel . 2)
                            ("~/Dropbox/gtd/roles/husband.org" :maxlevel . 2)
