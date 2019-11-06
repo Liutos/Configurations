@@ -1,5 +1,7 @@
 ;;; 加载使用第三方服务所需要的密钥
-(load-file "~/Documents/Configs/emacs/dict.el")
+(let ((pathname "~/Documents/Configs/emacs/dict.el"))
+  (when (file-exists-p pathname)
+    (load-file pathname)))
 
 (defun lt-load-config (path)
   "加载特定目录下的PATH配置文件"
@@ -46,7 +48,7 @@
 (lt-load-config "packages/swiper.el")
 ;; (lt-load-config "packages/swiper-helm.el")
 (lt-load-config "packages/switch-window.el")
-(load-theme 'gruvbox-dark-medium t)
+(load-theme 'gruvbox-light-soft t)
 (lt-load-config "packages/uuidgen.el")
 (lt-load-config "packages/wakatime.el")
 (lt-load-config "packages/xref-js2.el")
