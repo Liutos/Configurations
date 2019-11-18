@@ -6,3 +6,7 @@
 (add-hook 'js2-mode-hook
           (lambda ()
             (local-set-key "\C-c\C-f" 'lt-cd-shefenqi)))
+
+;;; 下列配置来自这里：https://stackoverflow.com/questions/35162106/how-to-disable-js2-mode-syntax-checking-globally-in-spacemacs
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
