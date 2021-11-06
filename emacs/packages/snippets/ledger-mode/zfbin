@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: 某月工资节税部分
+# key: zfbin
+# --
+`(format-time-string "%Y-%m-%d")` $1月份工资节税部分
+    Income:工资  -$2 CNY
+    Assets:Checking:支付宝
+$0

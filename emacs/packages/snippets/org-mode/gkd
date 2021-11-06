@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: 快速输入观看第X话的条目标题
+# key: gkd
+# --
+*** 观看第$0话
+:PROPERTIES:
+:DEVICE: mobilePhone
+:END:

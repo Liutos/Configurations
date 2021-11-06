@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: 上个月的电费
+# key: df
+# --
+`(format-time-string "%Y-%m-%d")` $1月份电费
+    Assets:Checking:尾号4083  -$2 CNY
+    Expense:Home:电费
+$0

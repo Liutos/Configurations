@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: JSON数据的头部
+# key: jsonheader
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+Content-Type: application/json
+
+{
+  "$1": "$0"
+}

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: 日日欣理财分红
+# key: rrx
+# --
+$0日日欣理财分红
+    Income:Dividend:日日欣理财                 -$1 CNY
+    Assets:Checking:工资卡
+

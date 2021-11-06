@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: for-of变量一个复数变量名的数组
+# key: fof
+# --
+for (const $1 of $1s) {
+  $0
+}

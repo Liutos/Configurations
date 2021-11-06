@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: 一个async的main函数
+# key: amain
+# --
+async function main() {
+  $0
+}
+
+main();

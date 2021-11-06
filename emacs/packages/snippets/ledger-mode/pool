@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: 转账到家庭资金池
+# key: pool
+# --
+`(format-time-string "%Y-%m-%d")` 转账到家庭资金池
+    Assets:Checking:工资卡                   -$1 CNY
+    Assets:Checking:尾号4083
+    Expense:Home:家庭资金池                  $2 CNY
+$0

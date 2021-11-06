@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: 年月日
+# key: riqi
+# --
+`(format-time-string "%Y-%m-%d")` 

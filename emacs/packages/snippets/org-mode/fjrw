@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 插入分解任务片段
+# key: fjrw
+# --
+:分解任务:
+- [ ] $0
+:END:

@@ -1,0 +1,12 @@
+(when (or (eq system-type 'darwin)
+          (eq system-type 'gnu/linux))
+  (load "~/Projects/Configurations/emacs/include.el")
+  (load "~/Projects/Configurations/emacs/defs.el")
+  (load "~/Projects/Configurations/emacs/customize.el")
+  (load "~/Projects/Configurations/emacs/keys.el"))
+
+(when (eq system-type 'windows-nt)
+  (load "E:\\Projects\\configurations\\emacs\\include.el")
+  (load "E:\\Projects\\configurations\\emacs\\defs.el")
+  (load "E:\\Projects\\configurations\\emacs\\customize.el")
+  (load "E:\\Projects\\configurations\\emacs\\keys.el"))

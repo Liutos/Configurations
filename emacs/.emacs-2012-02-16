@@ -1,0 +1,124 @@
+; Emacs
+;; Apperance
+;;; Hide the tool bar
+(tool-bar-mode 0)
+;;; Hide the scroll bar
+(scroll-bar-mode 0)
+;;; Highlight the matching parenthesis
+(show-paren-mode 1)
+
+;; Functionality
+;; Distinguish the buffers with same name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+;; Prevent from creating the backup file
+(setq make-backup-files nil)
+;; Share the clipborad with other X programs
+(setq x-select-enable-clipboard t)
+
+;; Key bindings
+;;; Give the key sequence C-tab the binding as switching among windows
+(global-set-key [C-tab] 'other-window)
+;;; Give the key home the binding as moving point to the begining of the buffer
+(global-set-key [home] 'beginning-of-buffer)
+;;; Give the key end the binding as moving point to the end of the buffer
+(global-set-key [end] 'end-of-buffer)
+;;; Give the key sequence C-c n the binding as moving point to the matching close parentheses
+(global-set-key "\C-cn" 'forward-list)
+;;; Give the key sequence C-c p the binding as moving point to the matching open parentheses
+(global-set-key "\C-cp" 'backward-list)
+
+; Plug-ins
+;; Register the directory contains the source files of plug-ins includes Paredit, showtip, sdcv
+(add-to-list 'load-path "~/myEmacs/")
+
+;; auto-complete
+(add-to-list 'load-path "~/.emacs.d/")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
+(ac-config-default)
+(setq-default ac-sources
+	      '(ac-source-words-in-same-mode-buffers
+		ac-source-yasnippet))
+;;; 在键入5个字符之后弹出补全菜单
+(setq ac-auto-start 5)
+;;; 在0.7秒之后再显示补全菜单
+(setq ac-auto-show-menu 0.7)
+;;; 设定颜色
+(set-face-background 'ac-candidate-face "gray")
+(set-face-underline-p 'ac-candidate-face "black")
+(set-face-background 'ac-selection-face "blue")
+
+;; Org-mode
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-cc" 'org-capture)
+(define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cb" 'org-iswitchb)
+(setq org-log-done t)
+;;; Hide the leading starts
+(setq org-hide-leading-stars t)
+;;; The list of files to be scaned by Agenda
+(setq org-agenda-files '("~/org/coding.org"))
+
+;; Paredit
+(autoload 'paredit-mode "paredit"
+  "Minor mode for pseudo-structurally editing Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'lisp-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'scheme-mode-hook (lambda () (paredit-mode +1)))
+
+;; rect-mark
+(add-to-list 'load-path "~/myEmacs/")
+(autoload 'rm-set-mark "rect-mark"
+  "Set mark for rectangle." t)
+(autoload 'rm-exchange-point-and-mark "rect-mark"
+  "Exchange point and mark for rectangle." t)
+(autoload 'rm-kill-region "rect-mark"
+  "Kill a rectangular region and save it in the kill ring." t)
+(autoload 'rm-kill-ring-save "rect-mark"
+  "Copy a rectangular region to the kill ring." t)
+(autoload 'rm-mouse-drag-region "rect-mark"
+  "Drag out a rectangular region with the mouse." t)
+(define-key ctl-x-map "r\C-@" 'rm-set-mark)
+(define-key ctl-x-map [?r ?\C-\ ] 'rm-set-mark)
+(define-key ctl-x-map "r\C-x" 'rm-exchange-point-and-mark)
+(define-key ctl-x-map "r\C-w" 'rm-kill-region)
+(define-key ctl-x-map "r\M-w" 'rm-kill-ring-save)
+(define-key global-map [S-down-mouse-1] 'rm-mouse-drag-region)
+
+;; Sawfish
+(add-to-list 'load-path "~/building/sawfish-1.8.1/")
+(autoload 'sawfish-mode "sawfish" "sawfish-mode" t)
+(setq auto-mode-alist (cons '("\\.sawfishrc$" . sawfish-mode) auto-mode-alist)
+      auto-mode-alist (cons '("\\.jl$" . sawfish-mode) auto-mode-alist)
+      auto-mode-alist (cons '("\\.sawfish/rc$" . sawfish-mode) auto-mode-alist))
+
+;; sdcv
+(require 'showtip)
+(require 'sdcv)
+;;; Give the key C-c d the binding as looking up the current word in dictionary
+(global-set-key "\C-cd" 'sdcv-search-pointer+)
+
+;; Template
+(require 'template)
+(template-initialize)
+
+;; Programming Languages
+(add-to-list 'load-path "~/src/Configurations/emacs/prolang/")
+;;; C
+(load "C.el")
+;;; Common Lisp
+(load "Lisp.el")
+;;; LaTeX
+(load "LaTeX.el")
+;;; OCaml
+(load "OCaml.el")
+;;; Perl
+(load "Perl.el")
+;;; Python
+(load "Python.el")
+;;; Scheme
+(load "Scheme.el")

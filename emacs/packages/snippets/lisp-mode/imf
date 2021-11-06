@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 快速输入import-from
+# key: imf
+# --
+(:import-from #:$1
+              #:$0)

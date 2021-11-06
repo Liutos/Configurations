@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: 一个.asd文件的基本内容
+# key: asdfinit
+# --
+(in-package #:cl-user)
+
+(defpackage #:system-$1
+  (:use #:cl #:asdf))
+
+(in-package #:system-$1)
+
+(defsystem #:$1
+  :author "Liutos <mat.liutos@gmail.com>"
+  :version "0.1.0"
+  :depends-on ($2)
+  :components
+  ((:module "src"
+            :components
+            ((:file "$3")))))

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: 通过RPC获取订单对象
+# key: rpcgetorder
+# --
+$1 rpc.mall.order.get({
+  data: {
+    orderId$2
+  },
+  dataIn: 'response.body.data.order'
+});$0

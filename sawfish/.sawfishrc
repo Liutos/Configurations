@@ -1,0 +1,114 @@
+; Sawfish缺省功能
+;; 外观
+;;; 为对话窗口添加和应用程序窗口一样的边框
+(setq decorate-transients t)
+;;; 设定新窗口以居中方式出现
+(setq place-window-mode 'centered)
+;; 键绑定
+(defun turn-off-screen ()
+  "Turn off the power of the screen."
+  (system "xset dpms force off"))
+;;; 绑定Super-b为关闭屏幕
+(bind-keys global-keymap "Super-b" '(turn-off-screen))
+
+(defun show-desktop-toggle ()
+  "Show or hide the root window."
+  (if (showing-desktop-p)
+      (hide-desktop)
+    (show-desktop)))
+;;; 绑定Super-k为切换根窗口的显示状态
+(bind-keys global-keymap "Super-k" '(show-desktop-toggle))
+;;; 绑定Super-r为调出Sawfish根菜单
+(bind-keys global-keymap "Super-r" '(popup-root-menu))
+
+(defun move-cursor-center ()
+  (warp-cursor 683 384))
+;;; 绑定Super-c为移动光标到屏幕正中间
+(bind-keys global-keymap "Super-c" '(move-cursor-center))
+;;; 绑定鼠标右键单击为调出Sawfish根菜单
+(bind-keys root-window-keymap "button3-click1" '(popup-root-menu))
+;;; 绑定Super-F4为关闭窗口
+(bind-keys window-keymap "Super-F4" 'delete-window-safely)
+;;; 绑定Super-F10为切换当前窗口的最大化状态
+(bind-keys window-keymap "Super-F10" 'maximize-window-toggle)
+;;; 加载jump-or-exec功能
+(require 'sawfish.wm.commands.jump-or-exec)
+
+(defun bind-joe-key (key-event title-regex program)
+  "Give the KEY-EVENT in the global-keymap a binding as invoking a jump-or-exec-qualified command. The command is constructed by the symbol jump-or-exec, the TITLE-REGEX as the title string for scanning among windows, and the startup command specified by argument PROGRAM when the object window is missing."
+  (bind-keys global-keymap
+	     key-event
+	     (list 'jump-or-exec title-regex program)))
+;;; 定义jump-or-exec功能所包括的键绑定
+(defvar-setq *my-joe-shortcuts*
+  '(("Super-a" "aMule" "amule")
+    ("Super-d" "星际译王" "stardict")
+    ("Super-e" "emacs@liutos-laptop" "emacs")
+    ("Super-f" "Vimperator" "~/building/firefox/firefox")
+    ("Super-g" "Chromium" "chromium-browser")
+    ("Super-i" "GVIM" "gvim")
+    ("Super-n" "sancho 0.9.4-59" "~/installer/sancho-0.9.4-59-linux-gtk-java/sancho")
+    ("Super-o" "图像查看器" "eog")
+    ("Super-p" "Document Viewer" "evince")
+    ("Super-s" "SMPlayer" "smplayer")
+    ("Super-S" "Shutter" "shutter")
+    ("Super-t" "liutos@liutos-laptop" "terminator")
+    ("Super-T" "Transmission" "transmission")
+    ("Super-v" "VirtualBox Manager" "virtualbox")
+    ("Super-w" "文件浏览器" "nautilus --no-desktop"))
+  "The list of the triplets specifying the key bindings to invoke the jump-or-exec-qualified command. Each of the triplet in this list contains the key-event, string of title and the startup command of a program.")
+;;; 映射bind-joe-key到每一个上面所定义的列表中包含的三元组上进行函数调用
+(mapc #'(lambda (triplet)
+	  (apply #'bind-joe-key triplet)) *my-joe-shortcuts*)
+;; 壁纸
+;;; 设定具体的壁纸
+(system "habak -ms ~/picture/苹果的宇宙.jpg")
+;; 应用程序菜单
+;;; 不通过.desktop文件自动生成菜单
+(setq apps-menu-autogen nil)
+;;; 自定义应用程序菜单
+(defvar-setq *my-apps-menu*
+  '(("_DeaDBeef" "deadbeef")
+    ("_Eclipse" "~/building/eclipse/eclipse -vm /home/liutos/installer/jdk1.6.0_26/bin/java")
+    ("_Emacs" "emacs")
+    ("_Evince" "evince")
+    ("_File roller" "file-roller")
+    ("_Foxit Reader" "FoxitReader")
+    ("_Glade" "glade")
+    ("_GNOME system monitor" "gnome-system-monitor")
+    ("_GNOME Terminal" "gnome-terminal")
+    ("_GVim" "gvim")
+    ("_NetBeans IDE" "~/building/netbeans-7.1.1/bin/netbeans")
+    ("_LyX" "lyx")
+    ("_MySQL-Workbench" "mysql-workbench")
+    ("_Nautilus" "nautilus")
+    ("磁盘实用工具(_P)" "palimpsest")
+    ("_Rox" "rox")
+    ("_Shutter" "shutter")
+    ("_SMPlayer" "smplayer")
+    ("_Terminator" "terminator")
+    ("_Transmission" "transmission"))
+  "The variable stores the tuple that contains the information of entry name and the startup command for the corresponding program. This variable is used for generating the application menu.")
+
+(defun backgroundize (string)
+  "Append a character `&' to STRING if it is not end with a `&'."
+  (let ((len (length string)))
+    (if (string= "&" (substring string (- len 1)))
+	string
+      (concat string " &"))))
+;;; 设定user-apps-menu来指定应用程序菜单
+(setq user-apps-menu
+      (mapcar #'(lambda (tuple)
+		  (let ((entry-name (nth 0 tuple))
+			(startup-command (nth 1 tuple)))
+		    (list entry-name
+			  (list 'system (backgroundize startup-command)))))
+	      *my-apps-menu*))
+;; 开机启动项
+;;; 设定开机所需要启动的程序对应的启动命令
+(defvar-setq *my-startup-programs*
+  '("tint2"
+    "gnome-volume-control-applet"))
+;;; 映射匿名函数到每一条程序启动命令上以在窗口管理器启动的时候启动应用程序
+(mapc #'(lambda (startup-command)
+	  (system (backgroundize startup-command))) *my-startup-programs*)

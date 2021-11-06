@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: 快速输入vertical-let
+# key: vlet
+# --
+com.liutos.cl-std:vertical-let

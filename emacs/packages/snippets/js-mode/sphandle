@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: signal-processor处理代码骨架
+# key: sphandle
+# --
+/**
+ * $1
+ */
+const logger = require('../../util/logger');
+
+const rpc = require('@ninozhang/rpc');
+
+module.exports = function* (messageBody) {
+  const {
+    $0
+    signalId
+  } = messageBody;
+};

@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: Roswell脚本的模板代码
+# key: roscript
+# --
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+
+#|
+An echo script
+|#
+
+;; 脚本的模板来自这里：https://leanpub.com/fullstacklisp/read#leanpub-auto-a-quick-primer-on-scripting-with-roswell
+(defun main (&rest args)
+  $0)

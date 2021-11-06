@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: signal-processor输出日志
+# key: spinfo
+# --
+logger.info(\`\${signalId} - $0\`);

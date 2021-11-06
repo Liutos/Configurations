@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: signal-processor每个处理器的参数检查
+# key: spmissing
+# --
+if (!$1) {
+  logger.error(\`\${signalId} - 缺少$1参数\`);
+  return false;
+}

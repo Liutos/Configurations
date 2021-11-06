@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: 在一个文件内定义一个包
+# key: filepkg
+# --
+(in-package #:cl-user)$0
+
+(defpackage #:$1
+  (:use #:cl))
+
+(in-package #:$1)

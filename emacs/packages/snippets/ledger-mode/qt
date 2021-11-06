@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: 前天ymd
+# key: qt
+# --
+`(string-trim (shell-command-to-string "date -v -2d '+%Y-%m-%d'"))` 

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: 某月工资直发部分
+# key: gz
+# --
+`(format-time-string "%Y-%m-%d")` $1月份工资直发部分
+    Income:工资  -$2 CNY
+    Assets:Checking:工资卡
+$0

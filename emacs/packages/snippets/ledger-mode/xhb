@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: 相互宝分摊
+# key: xhb
+# --
+$0 相互宝分摊
+    Liabilities:Credit Card:招行               -$1 CNY
+    Liabilities:Credit Card:招行               -$1 CNY
+    Expense:Insurance:相互宝分摊
+

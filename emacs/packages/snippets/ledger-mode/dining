@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 生成三餐的交易记录
+# key: dining
+# --
+`(format-time-string "%Y-%m-%d")` $1
+    Assets:Checking$2  $3 CNY
+    Expense:Food$4

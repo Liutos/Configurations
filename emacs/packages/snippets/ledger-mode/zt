@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: 昨天ymd
+# key: zt
+# --
+`(string-trim (shell-command-to-string "date -v -1d '+%Y-%m-%d'"))` $0

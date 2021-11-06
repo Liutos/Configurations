@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 插入参考资料片段
+# key: ckzl
+# --
+:参考资料:
+- [ ] $0
+:END:
