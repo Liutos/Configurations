@@ -6,12 +6,19 @@
       '(("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
         ("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
+(defun ensure-load-path-exists (dir)
+  "向LOAD-PATH中添加目录DIR——如果还没有添加的话。"
+  (when (file-directory-p dir)
+    (add-to-list 'load-path dir)))
+
 (when (eq system-type 'darwin)
   (add-to-list 'load-path "/Users/liutos/Dropbox/SourceCode/elisp/")
   (add-to-list 'load-path "~/Projects/cuckoo/contrib/emacs/")
   (add-to-list 'load-path "~/Projects/tern-master/emacs/")
   (add-to-list 'load-path "~/.emacs.d/themes/")
-  (add-to-list 'load-path "/Users/liutos/SourceCode/nodejs/parse-faq-org/contrib/emacs/"))
+  (add-to-list 'load-path "/Users/liutos/SourceCode/nodejs/parse-faq-org/contrib/emacs/")
+  (ensure-load-path-exists "~/Projects/Configurations/emacs/lib/"))
+
 (when (eq system-type 'gnu/linux)
   (add-to-list 'load-path "~/SourceCode/elisp/")
   (add-to-list 'load-path "~/Applications/cuckoo/contrib/emacs/")
