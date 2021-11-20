@@ -40,6 +40,10 @@
   (advice-add 'org-insert-item :around #'lt-around-org-insert-item)
   (add-hook 'org-after-todo-state-change-hook 'lt-mark-next-sibling-todo)
   ;; 加载平台相关的配置文件
+  (setq org-agenda-custom-commands
+        '(("d" "查看今天的安排"
+           ((agenda "" ((org-agenda-span 1)))
+            (tags-todo "PRIORITY=\"A\"")))))
   (let ((pathname "/Users/liutos/Dropbox/SourceCode/elisp/org_customization.el"))
     (when (file-exists-p pathname)
       (load-file pathname)))
