@@ -1,6 +1,7 @@
 (use-package evil
   :config
   (evil-mode 1)
+  (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'eshell-mode 'emacs)
   (evil-set-initial-state 'image-mode 'emacs)
   (evil-set-initial-state 'slime-repl-mode 'emacs)
