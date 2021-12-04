@@ -16,7 +16,7 @@
   (add-to-list 'load-path "~/Projects/cuckoo/contrib/emacs/")
   (add-to-list 'load-path "~/Projects/tern-master/emacs/")
   (add-to-list 'load-path "~/.emacs.d/themes/")
-  (add-to-list 'load-path "/Users/liutos/SourceCode/nodejs/parse-faq-org/contrib/emacs/")
+  (add-to-list 'load-path "/Users/liutos/Projects/parse-faq-org/contrib/emacs/")
   (ensure-load-path-exists "~/Projects/Configurations/emacs/lib/"))
 
 (when (eq system-type 'gnu/linux)
