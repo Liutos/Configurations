@@ -500,7 +500,7 @@
   ;; org-mode条目的API：https://orgmode.org/manual/Using-the-Property-API.html
   (interactive)
   (let ((state org-state))
-    (when (or (null state) (not (string= state "DONE")))
+    (when (not (member state '("CANCELLED" "DONE")))
       (return-from lt-mark-next-sibling-todo)))
 
   (let ((trigger (cdr (assoc "TRIGGER" (org-entry-properties nil "TRIGGER") #'string-equal))))
