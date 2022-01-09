@@ -150,8 +150,11 @@
   (interactive)
   (org-todo "TODO")
   (org-set-property "TRIGGER" "next-sibling chain!(\"TRIGGER\") todo!(TODO)")
-  (org-forward-heading-same-level 1)
-  (org-todo 'none))
+  (let ((has-next-sibling (save-excursion
+                            (outline-get-next-sibling))))
+    (when has-next-sibling
+      (org-forward-heading-same-level 1)
+      (org-todo 'none))))
 
 ;;; 开始定义lt-org-delay-inactive-timestamp
 (defun lt-org--has-next-p ()
