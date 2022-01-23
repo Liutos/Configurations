@@ -44,7 +44,7 @@
         '(("d" "查看今天的安排"
            ((agenda "" ((org-agenda-span 1)))
             (tags-todo "PRIORITY=\"A\"")))))
-  (let ((pathname "/Users/liutos/Dropbox/SourceCode/elisp/org_customization.el"))
+  (let ((pathname "~/Dropbox/SourceCode/elisp/org_customization.el"))
     (when (file-exists-p pathname)
       (load-file pathname)))
 
