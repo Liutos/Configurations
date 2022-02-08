@@ -43,8 +43,8 @@
 
 ;;; faq.el
 (when (featurep 'parse-faq-org)
-  (let ((file "/Users/liutos/SourceCode/elisp/faq_customization.el"))
-    (when (file-exists-p file)
+  (let ((file (file-symlink-p "~/.emacs.d/faq_customization.el")))
+    (when file
       (load file))))
 ;;; 定义用于helm的source
 (when (featurep 'parse-faq-org)

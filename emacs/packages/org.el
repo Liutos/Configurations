@@ -44,8 +44,8 @@
         '(("d" "查看今天的安排"
            ((agenda "" ((org-agenda-span 1)))
             (tags-todo "PRIORITY=\"A\"")))))
-  (let ((pathname "~/Dropbox/SourceCode/elisp/org_customization.el"))
-    (when (file-exists-p pathname)
+  (let ((pathname (file-symlink-p "~/.emacs.d/org_customization.el")))
+    (when pathname
       (load-file pathname)))
 
   ;; 办公和私人电脑共用的模板
