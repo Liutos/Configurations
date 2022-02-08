@@ -343,7 +343,7 @@
 (defun goto-end-of-ledger ()
   "当通过书签跳入账本时跳转到文件末尾。"
   (when (string= (buffer-file-name)
-                 "/Users/liutos/Dropbox/Accounting/a.txt")
+                 "/Users/liutos/Dropbox/Accounting/2022.ledger")
     (end-of-buffer)))
 
 ;;; 模拟按键，以便在没有Touchbar的键盘上快捷输入C-c、C-x，以及C-cl

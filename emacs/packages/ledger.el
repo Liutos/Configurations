@@ -17,6 +17,7 @@
   (add-to-list 'ledger-reports '("微信零钱" "ledger -f 2022.ledger register '^Assets:Checking:微信零钱'"))
   (add-to-list 'ledger-reports '("工资卡" "ledger -f 2022.ledger register '^Assets:Checking:工资卡'"))
   (add-to-list 'ledger-reports '("广发证券" "ledger -f 2022.ledger register '^Assets:Investment:广发证券'"))
+  (add-to-list 'ledger-reports '("jh" "ledger -f ~/Dropbox/Accounting/2022.ledger register 'Liabilities:Credit Card:交行'"))
   ;; TODO: 用:bind代替
   (define-key ledger-mode-map "\C-clr" 'ledger-report)
   :ensure t)
