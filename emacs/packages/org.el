@@ -39,6 +39,10 @@
 
   (advice-add 'org-insert-item :around #'lt-around-org-insert-item)
   (add-hook 'org-after-todo-state-change-hook 'lt-mark-next-sibling-todo)
+  ;; 为了在没有成功加载 ~/.emacs.d/org_customization.el 的情况下仍能够
+  ;; 对 org-capture-templates 调用 add-to-list，需要在此先赋予默认值。
+  (setq org-capture-templates nil)
+
   ;; 加载平台相关的配置文件
   (setq org-agenda-custom-commands
         '(("d" "查看今天的安排"
