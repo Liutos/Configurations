@@ -498,33 +498,75 @@
       (kill-line)
       (insert line))))
 
-(cl-defun lt-mark-next-sibling-todo ()
-  "将下一个条目标记为TODO。"
-  ;; org-mode条目的API：https://orgmode.org/manual/Using-the-Property-API.html
-  (interactive)
-  (let ((state org-state))
-    (when (not (member state '("CANCELLED" "DONE")))
-      (return-from lt-mark-next-sibling-todo)))
+(cl-defun lt-compute-sibling-state (org-state)
+  "决定是否要修改兄弟节点，以及如何修改。
 
-  (let ((trigger (cdr (assoc "TRIGGER" (org-entry-properties nil "TRIGGER") #'string-equal))))
+ORG-STATE 是在钩子 org-after-todo-state-change-hook 中可以访问到的条目的当前状态。"
+  (let ((state org-state))
+    (unless (member state '("CANCELLED" "DONE"))
+      (return-from lt-compute-sibling-state
+        (values nil nil))))
+
+  (let* ((properties (org-entry-properties nil "TRIGGER"))
+         (trigger (cdr (assoc "TRIGGER" properties #'string-equal))))
     (unless trigger
-      (return-from lt-mark-next-sibling-todo))
+      (return-from lt-compute-sibling-state
+        (values nil nil)))
 
     (let ((has-next-sibling (save-excursion
                               (outline-get-next-sibling))))
       (unless has-next-sibling
-        (return-from lt-mark-next-sibling-todo))
+        (return-from lt-compute-sibling-state
+          (values nil nil)))
+
+      ;; TODO: 这里的正则表达式可以优化一下，不需要每次都匹配 next-sibling 等内容。
       (let ((set-todo (string-match "next-sibling.+todo!(TODO)" trigger))
             (copy-deadline (string-match "next-sibling.+deadline!(copy)" trigger))
             (copy-trigger (string-match "next-sibling.+chain!(\"TRIGGER\")" trigger))
-            (deadline (cdr (assoc "DEADLINE" (org-entry-properties nil "DEADLINE") #'string-equal))))
+            (deadline (cdr (assoc "DEADLINE" (org-entry-properties nil "DEADLINE") #'string-equal)))
+            (copy-priority (string-match "next-sibling.+priority!(copy)" trigger))
+            (priority (cdr (assoc "PRIORITY" (org-entry-properties nil "PRIORITY") #'string-equal)))
+            (changes nil))
         (when (and (not set-todo) (not copy-deadline))
-          (return-from lt-mark-next-sibling-todo))
-        (save-excursion
-          (org-forward-heading-same-level 1 t)
-          (when set-todo
-            (org-todo "TODO"))
-          (when copy-deadline
-            (org-deadline nil deadline))
-          (when copy-trigger
-            (org-set-property "TRIGGER" trigger)))))))
+          (return-from lt-compute-sibling-state
+            (values nil nil)))
+
+        (when set-todo
+          (push (cons 'todo "TODO") changes))
+
+        (when copy-deadline
+          (push (cons 'deadline deadline) changes))
+
+        (when copy-trigger
+          (push (cons 'trigger trigger) changes))
+
+        (when copy-priority
+          (push (cons 'priority priority) changes))
+
+        (values (not (null changes)) changes)))))
+
+(cl-defun lt-mark-next-sibling-todo ()
+  "将下一个条目标记为TODO。"
+  ;; org-mode条目的API：https://orgmode.org/manual/Using-the-Property-API.html
+  (interactive)
+  (multiple-value-bind (need-change changes)
+      (lt-compute-sibling-state org-state)
+
+    (when need-change
+      (save-excursion
+        (org-forward-heading-same-level 1 t)
+        (let ((todo (cdr (assoc 'todo changes))))
+          (when todo
+            (org-todo todo)))
+
+        (let ((deadline (cdr (assoc 'deadline changes))))
+          (when deadline
+            (org-deadline nil deadline)))
+
+        (let ((trigger (cdr (assoc 'trigger changes))))
+          (when trigger
+            (org-set-property "TRIGGER" trigger)))
+
+        (let ((priority (cdr (assoc 'priority changes))))
+          (when priority
+            (org-entry-put nil "PRIORITY" priority)))))))
