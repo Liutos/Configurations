@@ -17,7 +17,8 @@
   (add-to-list 'load-path "~/Projects/tern-master/emacs/")
   (add-to-list 'load-path "~/.emacs.d/themes/")
   (add-to-list 'load-path "/Users/liutos/Projects/parse-faq-org/contrib/emacs/")
-  (ensure-load-path-exists "~/Projects/Configurations/emacs/lib/"))
+  (ensure-load-path-exists "~/Projects/Configurations/emacs/lib/")
+  (ensure-load-path-exists "~/Projects/fledgling/contrib/emacs/"))
 
 (when (eq system-type 'gnu/linux)
   (add-to-list 'load-path "~/SourceCode/elisp/")
@@ -47,6 +48,7 @@
 (load-file "~/Projects/Configurations/emacs/packages/magit-todos.el")
 (load-file "~/Projects/Configurations/emacs/packages/markdown.el")
 (load-file "~/Projects/Configurations/emacs/packages/org.el")
+(require 'org-fledgling)
 (load-file "~/Projects/Configurations/emacs/packages/paredit.el")
 (load-file "~/Projects/Configurations/emacs/packages/powerline.el")
 (load-file "~/Projects/Configurations/emacs/packages/projectile.el")
