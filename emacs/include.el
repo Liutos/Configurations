@@ -31,6 +31,7 @@
 (load-file "~/Projects/Configurations/emacs/packages/avy.el")
 (load-file "~/Projects/Configurations/emacs/packages/company.el")
 (load-file "~/Projects/Configurations/emacs/packages/dashboard.el")
+(load-file "~/Projects/Configurations/emacs/packages/diff-hl.el")
 (load-file "~/Projects/Configurations/emacs/packages/dimmer.el")
 (load-file "~/Projects/Configurations/emacs/packages/evil.el")
 (load-file "~/Projects/Configurations/emacs/packages/flycheck.el")
