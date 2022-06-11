@@ -29,6 +29,7 @@
 
 ;;; 其它需要require的内容
 (require 'uniquify)
+(load-file "~/Projects/Configurations/emacs/packages/ag.el")
 (load-file "~/Projects/Configurations/emacs/packages/avy.el")
 (load-file "~/Projects/Configurations/emacs/packages/company.el")
 (load-file "~/Projects/Configurations/emacs/packages/dashboard.el")
