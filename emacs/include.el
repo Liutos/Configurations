@@ -37,6 +37,7 @@
 (load-file "~/Projects/Configurations/emacs/packages/dimmer.el")
 (load-file "~/Projects/Configurations/emacs/packages/evil.el")
 (load-file "~/Projects/Configurations/emacs/packages/flycheck.el")
+(load-file "~/Projects/Configurations/emacs/packages/go.el")
 (load-file "~/Projects/Configurations/emacs/packages/helm.el")
 (load-file "~/Projects/Configurations/emacs/packages/helm-swoop.el")
 (load-file "~/Projects/Configurations/emacs/packages/helpful.el")
