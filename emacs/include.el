@@ -13,7 +13,6 @@
 
 (when (eq system-type 'darwin)
   (add-to-list 'load-path "/Users/liutos/Dropbox/SourceCode/elisp/")
-  (add-to-list 'load-path "~/Projects/cuckoo/contrib/emacs/")
   (add-to-list 'load-path "~/Projects/tern-master/emacs/")
   (add-to-list 'load-path "~/.emacs.d/themes/")
   (add-to-list 'load-path "/Users/liutos/Projects/parse-faq-org/contrib/emacs/")
@@ -22,7 +21,6 @@
 
 (when (eq system-type 'gnu/linux)
   (add-to-list 'load-path "~/SourceCode/elisp/")
-  (add-to-list 'load-path "~/Applications/cuckoo/contrib/emacs/")
   (add-to-list 'load-path "~/.emacs.d/themes/"))
 
 (require 'use-package)
@@ -45,7 +43,6 @@
 (load-file "~/Projects/Configurations/emacs/packages/ido.el")
 (load-file "~/Projects/Configurations/emacs/packages/ledger.el")
 (require 'cl)
-(require 'org-cuckoo nil t)
 (load-file "~/Projects/Configurations/emacs/packages/magit.el")
 (load-file "~/Projects/Configurations/emacs/packages/magit-todos.el")
 (load-file "~/Projects/Configurations/emacs/packages/markdown.el")
