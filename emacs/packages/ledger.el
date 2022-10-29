@@ -10,7 +10,7 @@
   (add-to-list 'ledger-reports '("9月份开支" "ledger -b 09/01 -e 09/30 -f ~/Dropbox/Accounting/2022.ledger balance ^expense"))
   (add-to-list 'ledger-reports '("三餐" "ledger -f ~/Dropbox/Accounting/2022.ledger balance '^Expense:Food:早餐' or '^Expense:Food:午餐' or '^Expense:Food:晚餐'"))
   (add-to-list 'ledger-reports '("三餐明细" "ledger -b 10/07 -f ~/Dropbox/Accounting/2022.ledger register ^Expense:Food"))
-  (add-to-list 'ledger-reports '("liabilities" "ledger -f ~/Dropbox/Accounting/2022.ledger register 'Liabilities:Credit Card:招行'"))
+  (add-to-list 'ledger-reports '("liabilities" "ledger -f ~/Dropbox/Accounting/2022.ledger register 'Liabilities:Credit Card:招行' | tac"))
   (add-to-list 'ledger-reports '("assets" "ledger -f 2022.ledger balance ^assets and \\( not 公积金 \\) or ^liabilities"))
   (add-to-list 'ledger-reports '("zfb" "ledger -f 2022.ledger register '支付宝'"))
   (add-to-list 'ledger-reports '("账单明细" "ledger -f 2022.ledger register '^Liabilities'"))
