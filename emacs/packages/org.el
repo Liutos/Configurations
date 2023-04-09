@@ -46,7 +46,8 @@
   ;; 加载平台相关的配置文件
   (setq org-agenda-custom-commands
         '(("d" "查看今天的安排"
-           ((agenda "" ((org-agenda-span 1)))
+           ((tags "pin" ((org-agenda-overriding-header "置顶的条目")))
+            (agenda "" ((org-agenda-span 1)))
             (tags-todo "PRIORITY=\"A\"")))))
   (let ((pathname (file-symlink-p "~/.emacs.d/org_customization.el")))
     (when pathname
