@@ -154,7 +154,8 @@
                             (outline-get-next-sibling))))
     (when has-next-sibling
       (org-forward-heading-same-level 1)
-      (org-todo 'none))))
+      (org-todo 'none)
+      (execute-extended-command '(4) "org-schedule"))))
 
 ;;; 开始定义lt-org-delay-inactive-timestamp
 (defun lt-org--has-next-p ()
