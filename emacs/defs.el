@@ -155,6 +155,8 @@
     (when has-next-sibling
       (org-forward-heading-same-level 1)
       (org-todo 'none)
+      (let ((tags (org-get-tags)))
+        (org-set-tags (delete "pin" tags)))
       (execute-extended-command '(4) "org-schedule"))))
 
 ;;; 开始定义lt-org-delay-inactive-timestamp
