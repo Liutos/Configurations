@@ -573,3 +573,13 @@ ORG-STATE 是在钩子 org-after-todo-state-change-hook 中可以访问到的条
         (let ((priority (cdr (assoc 'priority changes))))
           (when priority
             (org-entry-put nil "PRIORITY" priority)))))))
+
+(cl-defun lt-delete-headline-pin-tag ()
+  "当任务完成或取消时，删除它的 pin 标签。"
+  (interactive)
+  (unless (member org-state '("CANCELLED" "DONE"))
+    (cl-return-from lt-delete-headline-pin-tag))
+
+  (save-excursion
+    (let ((tags (org-get-tags)))
+      (org-set-tags (delete "pin" tags)))))

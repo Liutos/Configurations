@@ -39,6 +39,7 @@
 
   (advice-add 'org-insert-item :around #'lt-around-org-insert-item)
   (add-hook 'org-after-todo-state-change-hook 'lt-mark-next-sibling-todo)
+  (add-hook 'org-after-todo-state-change-hook 'lt-delete-headline-pin-tag t)
   ;; 为了在没有成功加载 ~/.emacs.d/org_customization.el 的情况下仍能够
   ;; 对 org-capture-templates 调用 add-to-list，需要在此先赋予默认值。
   (setq org-capture-templates nil)
