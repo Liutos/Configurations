@@ -12,7 +12,7 @@
     (add-to-list 'load-path dir)))
 
 (when (eq system-type 'darwin)
-  (add-to-list 'load-path "/Users/liutos/Dropbox/SourceCode/elisp/")
+  (add-to-list 'load-path "/Users/liutos/SourceCode/elisp/")
   (add-to-list 'load-path "~/Projects/tern-master/emacs/")
   (add-to-list 'load-path "~/.emacs.d/themes/")
   (add-to-list 'load-path "/Users/liutos/Projects/parse-faq-org/contrib/emacs/")
