@@ -27,6 +27,9 @@
     (add-hook 'org-mode-hook
               (lambda ()
                 (evil-local-set-key 'normal (kbd "TAB") 'org-cycle))))
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (evil-local-set-key 'normal (kbd "c") 'simulate-C-c)))
   (add-hook 'slime-mode-hook
             (lambda ()
               (evil-local-set-key 'normal (kbd "g d") 'slime-edit-definition)))

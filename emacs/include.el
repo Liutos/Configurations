@@ -58,7 +58,7 @@
 (load-file "~/Projects/Configurations/emacs/packages/swiper.el")
 (load-file "~/Projects/Configurations/emacs/packages/switch-window.el")
 (load-file "~/Projects/Configurations/emacs/packages/uuidgen.el")
-(load-file "~/Projects/Configurations/emacs/packages/wakatime.el")
+;; (load-file "~/Projects/Configurations/emacs/packages/wakatime.el")
 (load-file "~/Projects/Configurations/emacs/packages/wgrep.el")
 (load-file "~/Projects/Configurations/emacs/packages/yasnippet.el")
 (use-package request
