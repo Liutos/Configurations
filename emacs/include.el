@@ -53,6 +53,7 @@
 (load-file "~/Projects/Configurations/emacs/packages/projectile.el")
 (load-file "~/Projects/Configurations/emacs/packages/rainbow-delimiters.el")
 (load-file "~/Projects/Configurations/emacs/packages/restclient.el")
+(load-file "~/Projects/Configurations/emacs/packages/shellcheck.el")
 (load-file "~/Projects/Configurations/emacs/packages/slime.el")
 (load-file "~/Projects/Configurations/emacs/packages/smex.el")
 (load-file "~/Projects/Configurations/emacs/packages/swiper.el")
