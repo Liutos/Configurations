@@ -14,7 +14,7 @@
           (eq system-type 'windows-nt))
   (global-hl-line-mode 1)                 ; 高亮光标所在的行
   ;; (load-theme 'gruvbox-light-soft t)
-  (load-theme 'nimbus t))
+  (load-theme 'monokai t))
 (when (eq system-type 'darwin)
   (set-frame-font "Fira Code"))
 ;; (when (eq system-type 'gnu/linux)
