@@ -1,10 +1,14 @@
 (use-package evil
   :config
   (evil-mode 1)
-  (evil-set-initial-state 'dired-mode 'emacs)
-  (evil-set-initial-state 'eshell-mode 'emacs)
-  (evil-set-initial-state 'image-mode 'emacs)
-  (evil-set-initial-state 'slime-repl-mode 'emacs)
+  (let ((mode-list
+	 '(dired-mode
+	   eshell-mode
+	   image-mode
+	   rg-mode
+	   slime-repl-mode)))
+    (dolist (mode mode-list)
+      (evil-set-initial-state mode 'emacs)))
   (define-key evil-motion-state-map "/" 'swiper)
   (evil-define-key 'insert ledger-mode-map (kbd "<M-RET>") 'ledger-dup-account)
   ;; 在WSL中用K、J代替alt+上下箭头
