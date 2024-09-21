@@ -27,10 +27,9 @@
   (evil-global-set-key 'normal (kbd "g t") 'org-todo)
   (evil-global-set-key 'normal (kbd "f") 'evil-scroll-page-down)
   (evil-global-set-key 'normal (kbd "s") 'save-buffer)
-  (when (eq system-type 'gnu/linux)
-    (add-hook 'org-mode-hook
-              (lambda ()
-                (evil-local-set-key 'normal (kbd "TAB") 'org-cycle))))
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (evil-local-set-key 'normal (kbd "TAB") 'org-cycle)))
   (add-hook 'org-mode-hook
             (lambda ()
               (evil-local-set-key 'normal (kbd "c") 'simulate-C-c)))
