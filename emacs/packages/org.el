@@ -57,7 +57,7 @@
   ;; 办公和私人电脑共用的模板
   (add-to-list 'org-capture-templates
                `("t" "Todo" entry (file+headline ,org-default-notes-file "Tasks")
-                 "* %U%?\n  :PROPERTIES:\n  :CREATED_AT: %U\n  :CUSTOM_ID: %(lt-org-capture-uuidgen)\n  :ID: %(lt-org-capture-uuidclr)\n  :END:"))
+                 "* %U#%(read-max-task-id) %?\n  :PROPERTIES:\n  :CREATED_AT: %U\n  :CUSTOM_ID: %(lt-org-capture-uuidgen)\n  :ID: %(lt-org-capture-uuidclr)\n  :END:"))
   ;; keys.el
   (define-key org-agenda-mode-map [tab] 'liutos-org-agenda-goto)
   (define-key org-mode-map "\C-cls" 'helm-quick-schedule)

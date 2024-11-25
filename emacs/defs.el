@@ -583,3 +583,14 @@ ORG-STATE 是在钩子 org-after-todo-state-change-hook 中可以访问到的条
   (save-excursion
     (let ((tags (org-get-tags)))
       (org-set-tags (delete "pin" tags)))))
+
+(defun read-max-task-id ()
+  "读取配置文件，获取下一个最大的任务 ID。"
+  (let* ((file-path "/Users/liutos/Data/emacs/max_task_id.txt")
+         (content (f-read-text file-path))
+         (current-max-task-id (string-to-number content))
+         (next-task-id (1+ current-max-task-id)))
+    ;; 将新的最大的任务 ID 写回到文件中保存起来。
+    (f-write-text (number-to-string next-task-id) 'utf-8 file-path)
+    ;; 返回当前的最大 ID。
+    (number-to-string next-task-id)))
