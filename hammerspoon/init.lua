@@ -29,9 +29,27 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Right", function()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x + (max.w / 2)
+  -- 检查窗口所属的应用是否为 Emacs。
+  local app = win:application() -- 方法文档见[这里](https://www.hammerspoon.org/docs/hs.window.html#application)。
+  local bundleID = app:bundleID() -- 方法文档见[这里](https://www.hammerspoon.org/docs/hs.application.html#bundleID)。
+  local isEmacs = bundleID == "org.gnu.Emacs"
+
+  -- f.x 表示窗口的左上角的横坐标，正方向为右。
+  if isEmacs then
+     f.x = max.x + (max.w / 3)
+  else
+     f.x = max.x + (max.w / 2)
+  end
+
+  -- f.y 表示窗口的左上角的纵坐标，正方向为下。
   f.y = max.y
-  f.w = max.w / 2
+
+  if isEmacs then
+     f.w = max.w / 3 * 2
+  else
+     f.w = max.w / 2
+  end
+
   f.h = max.h
   win:setFrame(f)
 end)
