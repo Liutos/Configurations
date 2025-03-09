@@ -48,8 +48,8 @@
   (setq org-agenda-custom-commands
         '(("d" "查看今天的安排"
            ((agenda "" ((org-agenda-span 1)))
-            (tags "pin" ((org-agenda-overriding-header "置顶的条目")))
-            (tags-todo "PRIORITY=\"A\"")))))
+            (tags-todo "PRIORITY=\"A\"" ((org-agenda-overriding-header "重要的条目")))
+            (tags "pin" ((org-agenda-overriding-header "置顶的条目")))))))
   (let ((pathname (file-symlink-p "~/.emacs.d/org_customization.el")))
     (when pathname
       (load-file pathname)))
@@ -57,7 +57,7 @@
   ;; 办公和私人电脑共用的模板
   (add-to-list 'org-capture-templates
                `("t" "Todo" entry (file+headline ,org-default-notes-file "Tasks")
-                 "* %U#%(read-max-task-id) %?\n  :PROPERTIES:\n  :CREATED_AT: %U\n  :CUSTOM_ID: %(lt-org-capture-uuidgen)\n  :ID: %(lt-org-capture-uuidclr)\n  :END:"))
+                 "* #%(read-max-task-id) %?\n  :PROPERTIES:\n  :CREATED_AT: %U\n  :CUSTOM_ID: %(lt-org-capture-uuidgen)\n  :ID: %(lt-org-capture-uuidclr)\n  :END:"))
   ;; keys.el
   (define-key org-agenda-mode-map [tab] 'liutos-org-agenda-goto)
   (define-key org-mode-map "\C-cls" 'helm-quick-schedule)
