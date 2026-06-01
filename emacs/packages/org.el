@@ -58,6 +58,12 @@
   (add-to-list 'org-capture-templates
                `("t" "Todo" entry (file+headline ,org-default-notes-file "Tasks")
                  "* #%(read-max-task-id) %?\n  :PROPERTIES:\n  :CREATED_AT: %U\n  :CUSTOM_ID: %(lt-org-capture-uuidgen)\n  :ID: %(lt-org-capture-uuidclr)\n  :END:"))
+  (add-to-list 'org-capture-templates
+               `("w" "写作灵感 (drafter)" entry
+                 (file+headline "~/.config/jarvis/writing-inspirations.org" "写作灵感")
+                 "** #%(read-max-task-id) %^{灵感标题}\n   :PROPERTIES:\n   :CREATED_AT: %U\n   :CUSTOM_ID: %(lt-org-capture-uuidgen)\n   :ID: %(lt-org-capture-uuidclr)\n   :END:\n\n  %?"
+                 :empty-lines 1
+                 :jump-to-captured t))
   ;; keys.el
   (define-key org-agenda-mode-map [tab] 'liutos-org-agenda-goto)
   (define-key org-mode-map "\C-cls" 'helm-quick-schedule)
