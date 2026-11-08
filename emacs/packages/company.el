@@ -7,9 +7,3 @@
   (add-hook 'org-mode-hook #'company-mode)
   (add-hook 'prog-mode-hook #'company-mode)
   :ensure t)
-
-(use-package company-quickhelp
-  :config
-  (company-quickhelp-mode)
-  :ensure t
-  :requires (company))

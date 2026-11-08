@@ -38,7 +38,6 @@
 (load-file "~/Projects/Configurations/emacs/packages/flycheck.el")
 (load-file "~/Projects/Configurations/emacs/packages/helm.el")
 (load-file "~/Projects/Configurations/emacs/packages/helm-projectile.el")
-(load-file "~/Projects/Configurations/emacs/packages/helm-swoop.el")
 (load-file "~/Projects/Configurations/emacs/packages/helpful.el")
 (load-file "~/Projects/Configurations/emacs/packages/idle-highlight.el")
 (load-file "~/Projects/Configurations/emacs/packages/ido.el")
