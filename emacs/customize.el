@@ -41,6 +41,13 @@
     (add-to-list 'exec-path node-bin)
     (setenv "PATH" (concat node-bin ":" (getenv "PATH")))))
 
+;;; which-function-mode
+;; 在mode-line上显示光标所在的类/方法名；只对关心的模式开启，
+;; 避免大文件里反复计算imenu带来的卡顿
+(require 'which-func)
+(setq which-func-modes '(emacs-lisp-mode python-mode python-ts-mode go-mode))
+(which-function-mode 1)
+
 ;;; 定制主模式
 ;;; c-mode
 (setq c-default-style "linux")
