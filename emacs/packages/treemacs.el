@@ -3,6 +3,8 @@
   (require 'treemacs-evil)
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
+  ;; deferred 变体与 extended 相同，依赖 python3，异步高亮文件与目录的 git 状态
+  (treemacs-git-mode 'deferred)
   :bind ("C-c t" . treemacs)
   :ensure t)
 
