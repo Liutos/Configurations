@@ -1,6 +1,7 @@
 (use-package treemacs
   :config
   (require 'treemacs-evil)
+  (setq treemacs-width 46)
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
   ;; deferred 变体与 extended 相同，依赖 python3，异步高亮文件与目录的 git 状态
