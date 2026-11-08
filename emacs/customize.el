@@ -34,7 +34,12 @@
   (add-to-list 'exec-path "/usr/local/bin")
   (add-to-list 'exec-path "/usr/local/mysql/bin")
   (add-to-list 'exec-path "/usr/local/texlive/2020/bin/x86_64-darwin")
-  (setenv "PATH" (concat "/usr/local/texlive/2020/bin/x86_64-darwin:" "/usr/local/bin:" "/usr/local/mysql/bin:" (getenv "PATH"))))
+  (setenv "PATH" (concat "/usr/local/texlive/2020/bin/x86_64-darwin:" "/usr/local/bin:" "/usr/local/mysql/bin:" (getenv "PATH")))
+  ;; GUI 启动的 Emacs 不继承 shell 的 PATH，这里补上 npm 全局命令所在目录，
+  ;; 否则 eglot 找不到 pyright-langserver
+  (let ((node-bin "/Users/liutos/Applications/node-v24.13.1-darwin-arm64/bin"))
+    (add-to-list 'exec-path node-bin)
+    (setenv "PATH" (concat node-bin ":" (getenv "PATH")))))
 
 ;;; 定制主模式
 ;;; c-mode

@@ -27,6 +27,11 @@
   (evil-global-set-key 'normal (kbd "g t") 'org-todo)
   (evil-global-set-key 'normal (kbd "f") 'evil-scroll-page-down)
   (evil-global-set-key 'normal (kbd "s") 'save-buffer)
+  ;; M-. 默认被 evil 绑成 evil-repeat-pop-next，改回跳转定义
+  (evil-global-set-key 'normal (kbd "M-.") 'xref-find-definitions)
+  (evil-global-set-key 'normal (kbd "M-,") 'xref-go-back)
+  (evil-global-set-key 'motion (kbd "M-.") 'xref-find-definitions)
+  (evil-global-set-key 'motion (kbd "M-,") 'xref-go-back)
   (add-hook 'org-mode-hook
             (lambda ()
               (evil-local-set-key 'normal (kbd "TAB") 'org-cycle)))

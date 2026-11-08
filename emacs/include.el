@@ -51,6 +51,7 @@
 (load-file "~/Projects/Configurations/emacs/packages/paredit.el")
 (load-file "~/Projects/Configurations/emacs/packages/powerline.el")
 (load-file "~/Projects/Configurations/emacs/packages/projectile.el")
+(load-file "~/Projects/Configurations/emacs/packages/python.el")
 (load-file "~/Projects/Configurations/emacs/packages/rainbow-delimiters.el")
 (load-file "~/Projects/Configurations/emacs/packages/restclient.el")
 (load-file "~/Projects/Configurations/emacs/packages/shellcheck.el")
