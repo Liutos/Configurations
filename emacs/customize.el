@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; 加载使用第三方服务所需要的密钥
 (let ((pathname "~/Data/emacs/dict.el"))
   (when (file-exists-p pathname)

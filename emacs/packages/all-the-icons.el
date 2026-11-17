@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (add-to-list 'load-path "/Users/liutos/Projects/all-the-icons.el/")
 (when (display-graphic-p)
   (require 'all-the-icons))

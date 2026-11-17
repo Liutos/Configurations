@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package slime-repl-ansi-color
   :ensure t)
 

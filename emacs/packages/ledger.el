@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package ledger-mode
   :config
   (add-hook 'ledger-mode #'yas-minor-mode)

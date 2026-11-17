@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package ido
   :config
   (ido-mode 1)

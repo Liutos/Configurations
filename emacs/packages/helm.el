@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package helm
   :bind
   (("\C-x\C-b" . helm-buffers-list)

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; M-x package-install company
 (use-package company
   :config

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; 放置无副作用的定义
 (defun lt-next-todo (hour minute &optional duration)
   "设置光标所在行为一个TODO条目，并设置其SCHEDULED为HOUR:MINUTE。

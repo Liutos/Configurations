@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; 将路径添加到load-path中
 (require 'package)
 (package-initialize)

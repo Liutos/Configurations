@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package treemacs
   :config
   (require 'treemacs-evil)

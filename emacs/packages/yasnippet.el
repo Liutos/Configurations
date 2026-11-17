@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package yasnippet-snippets
   :config
   (yas-reload-all)

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (let ((pathname "~/Data/emacs/wakatime.el"))
   (use-package wakatime-mode
     :config

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; package-install yaml-mode
 (use-package rainbow-delimiters
   :config

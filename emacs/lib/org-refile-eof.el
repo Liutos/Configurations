@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; 将当前条目剪切并粘贴到某个目标.org文件的末尾
 ;;; 定义一个Helm的source，以便选择要粘贴的.org文件
 (defvar *org-refile-eof--helm-source* nil

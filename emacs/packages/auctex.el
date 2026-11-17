@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package auctex
   :config
   (setq TeX-auto-save t)

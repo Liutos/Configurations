@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package idle-highlight-mode
   :config
   (add-hook 'prog-mode-hook

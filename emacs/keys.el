@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 ;;; 全局按键
 (global-set-key "\M-0" 'lt-forward-sexp)
 (global-set-key "\M-9" 'lt-backward-sexp)
