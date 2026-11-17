@@ -44,7 +44,6 @@
 (load-file "~/Projects/Configurations/emacs/packages/ledger.el")
 (require 'cl)
 (load-file "~/Projects/Configurations/emacs/packages/magit.el")
-(load-file "~/Projects/Configurations/emacs/packages/magit-todos.el")
 (load-file "~/Projects/Configurations/emacs/packages/markdown.el")
 (load-file "~/Projects/Configurations/emacs/packages/org.el")
 (load-file "~/Projects/Configurations/emacs/packages/paredit.el")
